@@ -25,6 +25,19 @@ class ContadorPage extends StatelessWidget {
                 );
               },
             ),
+            Observer(
+              builder: (_) {
+                return Text(controller.fullName.first);
+              },
+            ),
+            Observer(
+              builder: (_) {
+                return Text(controller.fullName.last);
+              },
+            ),
+            Observer(builder: (_) {
+              return Text(controller.saudacao);
+            }),
           ],
         ),
       ),
