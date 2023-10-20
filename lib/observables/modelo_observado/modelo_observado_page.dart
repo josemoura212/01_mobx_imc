@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:mobx_imc/observables/list/observable_list_controoler.dart';
+import 'package:mobx_imc/observables/modelo_observado/modelo_obervado_controller.dart';
 
-class ObservableListPage extends StatefulWidget {
-  const ObservableListPage({Key? key}) : super(key: key);
+class ModeloObservadoPage extends StatefulWidget {
+  const ModeloObservadoPage({Key? key}) : super(key: key);
 
   @override
-  State<ObservableListPage> createState() => _ObservableListPageState();
+  State<ModeloObservadoPage> createState() => _ModeloObservadoPageState();
 }
 
-class _ObservableListPageState extends State<ObservableListPage> {
-  final controller = ObservableListControoler();
+class _ModeloObservadoPageState extends State<ModeloObservadoPage> {
+  final controller = ModeloObervadoController();
 
   @override
   Widget build(BuildContext context) {
