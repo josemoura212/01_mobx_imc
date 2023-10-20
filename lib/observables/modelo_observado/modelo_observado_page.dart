@@ -14,6 +14,7 @@ class _ModeloObservadoPageState extends State<ModeloObservadoPage> {
 
   @override
   Widget build(BuildContext context) {
+    print("teste");
     return Scaffold(
       appBar: AppBar(
         title: const Text('Observable List'),
