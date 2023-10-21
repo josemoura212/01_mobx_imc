@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx_imc/observables/modelo_observado/modelo_obervado_controller.dart';
@@ -14,24 +16,29 @@ class _ModeloObservadoPageState extends State<ModeloObservadoPage> {
 
   @override
   Widget build(BuildContext context) {
-    print("teste");
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Observable List'),
+        title: const Text('Modelo Observado Page'),
       ),
       body: Column(
         children: [
           Expanded(
             child: Observer(
               builder: (_) {
+                print("LISTAAAAAAAAAA");
                 return ListView.builder(
                   itemCount: controller.product.length,
                   itemBuilder: (context, index) {
-                    final product = controller.product[index];
-                    return CheckboxListTile(
-                      value: false,
-                      onChanged: (_) {},
-                      title: Text(product.name),
+                    final productStore = controller.product[index];
+                    return Observer(
+                      builder: (_) {
+                        print("CHECKBOXXXXXXX");
+                        return CheckboxListTile(
+                          value: productStore.selected,
+                          onChanged: (_) => controller.selectedProduct(index),
+                          title: Text(productStore.product.name),
+                        );
+                      },
                     );
                   },
                 );

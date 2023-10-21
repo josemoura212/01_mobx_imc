@@ -13,13 +13,13 @@ mixin _$ModeloObervadoController on ModeloObervadoControllerBase, Store {
       Atom(name: 'ModeloObervadoControllerBase.product', context: context);
 
   @override
-  ObservableList<ProductModel> get product {
+  ObservableList<ProductStore> get product {
     _$productAtom.reportRead();
     return super.product;
   }
 
   @override
-  set product(ObservableList<ProductModel> value) {
+  set product(ObservableList<ProductStore> value) {
     _$productAtom.reportWrite(value, super.product, () {
       super.product = value;
     });
@@ -56,6 +56,17 @@ mixin _$ModeloObervadoController on ModeloObervadoControllerBase, Store {
         .startAction(name: 'ModeloObervadoControllerBase.removerProduct');
     try {
       return super.removerProduct();
+    } finally {
+      _$ModeloObervadoControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void selectedProduct(int index) {
+    final _$actionInfo = _$ModeloObervadoControllerBaseActionController
+        .startAction(name: 'ModeloObervadoControllerBase.selectedProduct');
+    try {
+      return super.selectedProduct(index);
     } finally {
       _$ModeloObervadoControllerBaseActionController.endAction(_$actionInfo);
     }

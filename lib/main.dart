@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobx_imc/observables/list/observable_list_page.dart';
+import 'package:mobx_imc/observables/future/future_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,7 +11,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const ObservableListPage(),
+      home: const FuturePage(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
